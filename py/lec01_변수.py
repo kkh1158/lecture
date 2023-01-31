@@ -1,39 +1,37 @@
-a="10"
+a="10" # 바인딩한다
 b="20"
-print(a+b)
+print(a+b) # 1020
 
 a="ABC"
 b=10
-print(a*b+'\n')
-print('1'+'\n'+'?')
+print(a*b) # ABCABCABCABCABCABCABCABCABCABC
 
 # 리스트 - index 0번째부터 시작
 a=[1,2,3,4,'A']
-a[2]='z' # update
-a.append(6) # insert
-a.insert(1,'bbb')
-a.pop(0) # delete
-a.remove('A')
-del a[3]
-print(a[1]) # select
+a[2]='z'            # [1, 2, 'z', 4, 'A']
+a.append(6)         # [1, 2, 'z', 4, 'A', 6]
+a.insert(1,'bbb')   # [1, 'bbb', 2, 'z', 4, 'A', 6]
+a.pop(0)            # ['bbb', 2, 'z', 4, 'A', 6]
+a.remove('A')       # ['bbb', 2, 'z', 4, 6]
+del a[3]            # ['bbb', 2, 'z', 6]
+print(a)            # ['bbb', 2, 'z', 6]
 
-# 튜플
+# 튜플 - 리스트랑 비슷한데 내부값 변경 불가
+# 데이터 전달할때 튜플로 전달
 b=(1,2,3,4,5)
-# b.append(6) 튜플은 이런거 없음:상수이니까
-print(b) # 튜플은 조회용
+# b.append(6) 튜플은 이런거 안됨
+print(b)        # 튜플은 조회용
 print(b[1])
 
-# 딕셔너리
-d={'empno':7733, 'ename':'SMITH', 'empno':1} # 중복이면 겹쳐짐
-print(d)
-print(d['empno']) # select
-d['job']='SALES' # insert
-d['ename']='변경' # update
-print(d)
+# 딕셔너리 - {키:값, 키:값}중복이면 겹쳐짐
+d={'empno':7733, 'ename':'SMITH'}
+print(d['empno'])   # 7733
+d['job']='SALES'
+d['ename']='CHANGE'
+print(d)            # {'empno': 7733, 'ename': 'CHANGE', 'job': 'SALES'}
 
-mem=[1,2,3,{0:'B', 1:'b'}]
-print(mem)
-print(mem[3][1])
+mem=[1,2,3,{0:'B', 1:'C'}]
+print(mem[3][1])    # C
 
 ytb = {
     "kind": "youtube#videoListResponse",
@@ -111,26 +109,30 @@ print(nvr['urls'][2]['url'])
 print(nvr['urls'][3]['url'])
 
 # 타입
-print(type(5), 5) # int
-print(type('abc'), 'abc') # str
-print(type(1.1), 1.1) # float
-print(type([1,2,3]), [1,2,3]) # list
-print(type((1,2,3)), (1,2,3)) # tuple
+print(type(5), 5)               # int
+print(type('abc'), 'abc')       # str
+print(type(1.1), 1.1)           # float
+print(type([1,2,3]), [1,2,3])   # list
+print(type((1,2,3)), (1,2,3))   # tuple
 print(type({'empno':777,'deptno':10}), {'empno':777,'deptno':10}) # dict
-print(type(True), True) # bool
+print(type(True), True)         # bool: True, False (앞글자 대문자)
 
 # 타입변환 형변환 cating
 # print(3+'4')
-print(str(3)+'4') # 34
-print(3+int('4')) # 7
+print(str(3)+'4')   # 34
+print(3+int('4'))   # 7
 # print(4+3.7)
 print(float(4)+3.7) # 7.7
+print(bool(0))      # False
+print(int(True))    # 1
+print(float(True))  # 1.0
+print(str(True))    # True
 
 # 슬라이싱 slicing
 # 문자열[시작이상:끝미만:증감(-거꾸로)]
 msg='ABCDE'
 print(msg[0:2]) # AB
-print(msg[3:]) # DE
+print(msg[3:])  # DE
 print(msg[-2:]) # DE
 
 # 리스트[시작이상:끝미만:증감(-거꾸로)]

@@ -124,13 +124,7 @@ for k in range(4):
     print()
 
 
-
-
-
-
-# while 조건식:
-#     반복실행문
-
+# 구구단을 while로
 num=5
 while num<10:
     print('그렇다', num)
