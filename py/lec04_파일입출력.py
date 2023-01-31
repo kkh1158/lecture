@@ -88,7 +88,4 @@ with open(file=wpath, mode='a', encoding='UTF-8') as wf: # mode={'a': 추가, 'w
         wf.write(f)
 print('=== write done ===')
 
-
-
 # 파일/디렉토리 관리
-

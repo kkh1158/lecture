@@ -1,6 +1,6 @@
 # 패키지     모듈              클래스     함수
 # 폴더      .py               class     def
-# venv      04파일입출력함수   CalClass   add
+# venv      lec04            CalClass   add
 
 class CalClass:
     def add(n1, n2):
