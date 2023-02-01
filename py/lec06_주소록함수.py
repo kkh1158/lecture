@@ -1,29 +1,52 @@
+# addr_list = [{'name': 'HONG', 'tel': '1234'},
+#              {'name': 'SMITH', 'tel': '8888'},
+#              {'name': 'HONG', 'tel': '5678'}]
+
+def addr_file_read():
+    rpath="C:\\AI\\pythonProject\\venv\\lecture\\file\\juso.txt"
+    with open(file=rpath, mode='r', encoding='UTF-8') as f:
+        addr_list=[]
+        for line in f.readlines()[1:]:
+            dic = {}
+            (name_, tel_) = line.split('\t')
+            if name_=='' or tel_=='': break
+            dic['name'] = name_.replace("\n", "")
+            dic['tel'] = tel_.replace("\n", "")
+            addr_list.append(dic)
+        return addr_list
+
 def menu_print():
     print('\t----------------------')
     print('\t1. 추가', '\t2. 수정', '\t3. 삭제')
     print('\t4. 검색', '\t5. 전체', '\t6. 저장')
     print('\t----------------------')
 
-addr_list = [{'name': 'HONG', 'tel': '1234'},
-             {'name': 'SMITH', 'tel': '8888'},
-             {'name': 'HONG', 'tel': '5678'}]
-
-def addr_input():
+def addr_input(addr_list):
     print('\t******** 추가 ********')
-    name = input('\t이름: ')
-    tel = input('\t번호: ')
+    while True:
+        name = input('\t이름: ')
+        tel = input('\t번호: ')
+        if name!='' and tel!='': break
     dic = {'name': name, 'tel': tel}
-    addr_list.append(dic)
-    print('\t추가 완료')
+    isadd = 0
+    for addr_dic in addr_list:
+        if dic['tel']==addr_dic['tel']:
+            isadd = 1
+            break
+    if isadd==0:
+        addr_list.append(dic)
+        print('\t추가 완료')
+    elif isadd==1:
+        print('\t중복 추가 실패')
 
-def addr_search_all():
+def addr_search_all(addr_list):
     print('\t******** 전체 ********')
     for addr_dic in addr_list:
         print('\t', addr_dic['name'], '\t', addr_dic['tel'])
     print('\t총', len(addr_list), '건', end='')
     input('\t아무키 입력')
 
-def addr_search():
+def addr_search(addr_list):
     print('\t******** 검색 ********')
     input_name = input('\t이름 입력: ')
     search_list=[]
@@ -37,7 +60,7 @@ def addr_search():
             print('\t', search_tel)
     input('\t아무키 입력')
 
-def addr_delete():
+def addr_delete(addr_list):
     print('\t******** 삭제 ********')
     input_tel = input('\t번호 입력: ')
     isdel = False
@@ -63,7 +86,7 @@ def addr_delete():
     #             print('\t삭제되지않음', end='')
     input('\t아무키 입력')
 
-def addr_update():
+def addr_update(addr_list):
     print('\t******** 수정 ********')
     input_tel = input('\t번호 입력: ')
     ismod = -1
@@ -88,43 +111,44 @@ def addr_update():
     input('\t아무키 입력')
 
 def juso():
+    addr_list = addr_file_read()
+    #print(addr_list)
     while True:
         menu_print()
         cmd=input('\t입력: ')
         if cmd == '6':
             print('\t******** 종료 ********')
-            addr_file_write()
+            addr_file_write(addr_list)
             break
         elif cmd == '1':
-            addr_input()
+            addr_input(addr_list)
         elif cmd == '2':
-            addr_update()
+            addr_update(addr_list)
         elif cmd == '3':
-            addr_delete()
+            addr_delete(addr_list)
         elif cmd == '4':
-            addr_search()
+            addr_search(addr_list)
         elif cmd == '5':
-            addr_search_all()
+            addr_search_all(addr_list)
 
-def addr_file_write():
+def addr_file_write(addr_list):
     wpath="C:\\AI\\pythonProject\\venv\\lecture\\file\\juso.txt"
     with open(file=wpath, mode='w', encoding='UTF-8') as f:
-        # for key in list(addr_list[0].keys()):
-        #     f.write(key+'\t')
-        # f.write('\n')
-        f.write('name' + 'tel' + '\n')
+        f.write('name' + '\t' + 'tel' + '\n')
         for addr_dic in addr_list:
+            if addr_dic['name']=='' or addr_dic['tel']=='': continue
             temp = addr_dic['name'] + '\t' + addr_dic['tel']
             f.write(temp + '\n')
+
+        #f.write(addr_list)
 
 if __name__ == '__main__':
     print('직접돌려보기')
     juso()
 
+# 이건 그냥
 # print(addr_list[0])
 # print(addr_list[0].keys())          # dict_keys(['name', 'tel'])
 # print(list(addr_list[0].keys()))    # ['name', 'tel']
 # print(list(addr_list[0].keys())[0]) # name
 # print(list(addr_list[0].keys())[1]) # tel
-
-

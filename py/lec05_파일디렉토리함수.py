@@ -43,11 +43,11 @@ import datetime as dt # datetime.py calss datetime
 
 # path = "C:\\AI\\test.txt"
 # time_f = os.path.getmtime(path)
-# print(type(time_f), time_f)
+# print(type(time_f), time_f) # <class 'float'> 1675146144.2887027
 # time_t = dt.datetime.fromtimestamp(time_f)
-# print(type(time_t), time_t)
+# print(type(time_t), time_t) # <class 'datetime.datetime'> 2023-01-31 15:22:24.288703
 # time_s = dt.datetime.strftime(time_t, '%Y-%m-%d %H:%M:%S')
-# print(type(time_s), time_s)
+# print(type(time_s), time_s) # <class 'str'> 2023-01-31 15:22:24
 
 # p = "C:\\AI\\pythonProject\\venv\\lecture"
 # for f in os.listdir(p):
