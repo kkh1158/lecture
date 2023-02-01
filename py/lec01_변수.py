@@ -191,5 +191,16 @@ print(len(lang1))
 # 홀수만 출력
 nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print(nums[::2])
-for i in nums[::2]:
-    print(i, end='')
+
+#-----------------
+addr_list = [1, 2 , 3 ,'AA', {"name":"홍길동", "tel":123}]
+# addr_list.pop(0)        #index삭제, 그냥은 맨뒤삭제
+# addr_list.remove( {"name":"홍길동", "tel":123} )  #AA라는값삭제
+# del addr_list[0]
+
+print(addr_list)
+for i, val in enumerate(addr_list):
+    print(i, val)
+    if val == "AA":
+        del addr_list[i]
+print(addr_list)

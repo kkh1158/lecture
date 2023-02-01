@@ -39,7 +39,7 @@ flist = os.listdir(join(os.path.dirname(os.getcwd()), 'file'))
 print('\\file list', flist)
 print('--------------------------------------------------')
 
-import datetime as dt
+import datetime as dt # datetime.py calss datetime
 
 # path = "C:\\AI\\test.txt"
 # time_f = os.path.getmtime(path)
@@ -88,8 +88,8 @@ import datetime as dt
 
 # 탐색기
 def tam(p, cnt=0):
-    for f in os.listdir(p):
-        path = join(p, f)
+    for f in os.listdir(p): # p 경로의 자식 리스트
+        path = join(p, f) # 자식 디렉토리 경로
         time_f = os.path.getmtime(path)
         time_t = dt.datetime.fromtimestamp(time_f)
         time_s = dt.datetime.strftime(time_t, '%Y-%m-%d %H:%M:%S')
@@ -112,7 +112,7 @@ tam(os.getcwd())
 # /etc/*c/a*.log
 # -------------------------------
 
-# import glob
+# import glob # glob.py glob함수 검색할때 굿굿
 
 # print(glob.glob("C:\\p*")) # glob의 결과값은 리스트
 
