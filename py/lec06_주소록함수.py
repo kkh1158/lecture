@@ -15,6 +15,17 @@ def addr_file_read():
             addr_list.append(dic)
         return addr_list
 
+def addr_file_write(addr_list):
+    wpath="C:\\AI\\pythonProject\\venv\\lecture\\file\\juso.txt"
+    with open(file=wpath, mode='w', encoding='UTF-8') as f:
+        f.write('name' + '\t' + 'tel' + '\n')
+        for addr_dic in addr_list:
+            if addr_dic['name']=='' or addr_dic['tel']=='': continue
+            temp = addr_dic['name'] + '\t' + addr_dic['tel']
+            f.write(temp + '\n')
+
+        #f.write(addr_list)
+
 def menu_print():
     print('\t----------------------')
     print('\t1. 추가', '\t2. 수정', '\t3. 삭제')
@@ -131,17 +142,7 @@ def juso():
         elif cmd == '5':
             addr_search_all(addr_list)
 
-def addr_file_write(addr_list):
-    wpath="C:\\AI\\pythonProject\\venv\\lecture\\file\\juso.txt"
-    with open(file=wpath, mode='w', encoding='UTF-8') as f:
-        f.write('name' + '\t' + 'tel' + '\n')
-        for addr_dic in addr_list:
-            if addr_dic['name']=='' or addr_dic['tel']=='': continue
-            temp = addr_dic['name'] + '\t' + addr_dic['tel']
-            f.write(temp + '\n')
-
-        #f.write(addr_list)
-
+# 여기 .py에서만 구동
 if __name__ == '__main__':
     print('직접돌려보기')
     juso()
