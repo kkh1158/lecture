@@ -13,6 +13,7 @@ def addr_insert_file(path="../file/juso.txt"):
             if len(flist) == 2:
                 fdict = {dict_key1:flist[0], dict_key2:flist[1]}
             addr_list.append(fdict)
+        print(addr_list)
 
     conn = cx_Oracle.connect("ai", "0000", "localhost:1521/XE")
     sql = "insert into addr(seq, name, tel) values(addr_seq.nextval, :name, :tel)"
