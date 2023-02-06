@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+test_list = [1,2,3]<br>
+{% for val in KEY_TEST_LIST %}
+     {{ val }} <br>
+{% endfor %}
+
+<hr>
+test_dict = {"uid":"kim", "upw":"111"} <br>
+aaa = test_dict<br>
+{{aaa.uid}} , {{aaa.upw}}
+
+<hr>
+
+test_list_dict= [ {"uid": "kim1", "upw": "555"},
+                  {"uid": "kim2", "upw": "666"} ]<br>
+KEY_TEST_LIST_DICT = test_list_dict <br>
+
+{% for dic in KEY_TEST_LIST_DICT %}
+     {{ dic.uid }} , {{ dic.upw }}<br>
+{% endfor %}
+<br>
+{{ KEY_TEST_LIST_DICT[1]['upw'] }}
+
+
+<form mehtod="get" action="/test_prm_get">
+    <input type="text" name="DDD_ID" value="kim">
+    <input type="text" name="DDD_PW" value="1234">
+    <input type="submit" value="GET전송">
+</form><br>
+<a href="/test_prm_get?DDD_ID=kim&DDD_PW=1234">GET전송</a><br>
+
+<form method="post" action="/test_prm_post">
+    <input type="text" name="DDD_ID" value="kim">
+    <input type="text" name="DDD_PW" value="1234">
+    <input type="submit" value="POST전송">
+</form><br>
+
+
+</body>
+
+</html>

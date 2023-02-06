@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+test파일입니다<br>
+test_list = [1,2,3]<br>
+{% for val in KEY_TEST_LIST %}
+    {{val}} <br>
+{% endfor %}
+<br>
+{{KEY_TEST_DICT.uid}}, {{KEY_TEST_DICT.upw}} <br>
+<br>
+{% for dic in KEY_TEST_LIST_DICT %}
+    {{dic.uid}}, {{dic.upw}} <br>
+{% endfor %}
+<br>
+
+<form method="get" action="/test_prm_get">
+    <input type="text" name="DDD_ID" value="kim">
+    <input type="text" name="DDD_PW" value="1234">
+    <input type="submit" value="get전송">
+</form>>
+<br>
+<a href="/test_prm_get?DDD_ID=kim&DDD_PW=1234">GET전송</a>
+
+<br>
+
+<form method="post" action="/test_prm_post">
+    <input type="text" name="DDD_ID" value="kim">
+    <input type="text" name="DDD_PW" value="1234">
+    <input type="submit" value="post전송">
+</form>>
+<br>
+
+
+
+
+</body>
+</html>
