@@ -10,6 +10,8 @@ ehthumbs_vista.db
 
 __pycache__
 .DS_Store
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
 
 # Dump file
 *.stackdump
