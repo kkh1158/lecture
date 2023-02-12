@@ -192,16 +192,16 @@ def test_prm_get():
     print('겟방식')
     id = request.args.get('DDD_ID') # 폼태그를 쓰면 name뒤에 있는걸 써야하고 폼태그가 아니면 ?뒤에 키값을 써줘야함
     pw = request.args.get('DDD_PW')
-    print(id, pw)
-    return id+','+pw
+    print(id, pw, request.method)
+    return request.method+id+','+pw
 
 @app.route('/test_prm_post', methods=['POST'])
 def test_prm_post():
     print('포스트방식')
     id = request.form.get('DDD_ID') # 포스트는 무조건 폼안에 넣고 name뒤에 있는거 써야함
     pw = request.form.get('DDD_PW')
-    print(id, pw)
-    return id+','+pw
+    print(id, pw, request.method)
+    return request.method+id+','+pw
 
 if __name__ == '__main__':
     app.debug = True
