@@ -69,4 +69,10 @@
 # print( sum(x for x in range(1,101)) )
 
 # 람다연습
-print(( lambda b : b/2*(b+1) )( 100 ))
+# print(( lambda b : b/2*(b+1) )( 100 ))
+
+# 정규표현식 연습
+import re
+
+res = re.search('\w+[.]','Heikkinend, Miss. Laina')
+print(res.group)
