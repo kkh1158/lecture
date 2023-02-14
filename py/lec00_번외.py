@@ -78,3 +78,10 @@
 
 import pandas as pd
 pd.pivot_table
+
+from sklearn.preprocessing import LabelEncoder
+
+le=LabelEncoder
+le.fit()
+
+pd.isna
