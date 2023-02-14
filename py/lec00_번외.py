@@ -72,7 +72,9 @@
 # print(( lambda b : b/2*(b+1) )( 100 ))
 
 # 정규표현식 연습
-import re
+# import re
+# res = re.search('\w+[.]','Heikkinend, Miss. Laina')
+# print(res.group)
 
-res = re.search('\w+[.]','Heikkinend, Miss. Laina')
-print(res.group)
+import pandas as pd
+pd.pivot_table
