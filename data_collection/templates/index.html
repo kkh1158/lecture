@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+get<br>
+<form method="get" action="/form_get">
+    <input type="text" name="userid">
+    <input type="text" name="userpw">
+    <input type="submit" value="get전송">
+</form><br>
+<hr>
+
+post<br>
+<form method="post" action="/form_post">
+    <input type="text" name="userid">
+    <input type="text" name="userpw">
+    <input type="submit" value="post전송">
+</form><br>
+<hr>
+
+rest - get/post<br>
+<form method="post" action="/form_rest">
+    <input type="text" name="userid" id="userid_id">
+    <input type="text" name="userpw" id="userpw_id">
+    <input type="button" name="add" id="rest_button_text_text" value="rest_button_text_text">
+    <input type="button" name="add" id="rest_button_json_text" value="rest_button_json_text">
+    <input type="button" name="add" id="rest_button_json_json" value="rest_button_json_json">
+    <input type="button" name="add" id="rest_button_uri" value="rest_button_uri">
+</form><br>
+<hr>
+
+<script
+    src="https://code.jquery.com/jquery-3.6.3.js"
+    integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous">
+</script>
+<script>
+
+// id:#
+// class:.
+// dict   {"key": 1111}
+// JSON   {"key": 1111}
+
+$(document).ready(function(){
+    $(document).on("click", "#rest_button_text_text", function() {
+        $.ajax({url: "./form_rest_text_text",
+                method: "POST",
+                data: { "userid": $("#userid_id").val(), "userpw": $("#userpw_id").val() },
+                contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+                dataType: "text",
+                error: function(aaa){ alert(aaa) },
+                success: function(bbb){ alert(bbb) },
+        });
+    });
+    $(document).on("click", "#rest_button_json_text", function() {
+        $.ajax({url: "./form_rest_json_text",
+                method: "POST",
+                data: JSON.stringify( { "userid": $("#userid_id").val(), "userpw": $("#userpw_id").val() } ),
+                contentType : "application/json; charset=UTF-8",
+                dataType: "text",
+                error: function(aaa){ alert(aaa) },
+                success: function(bbb){ alert( JSON.parse(bbb)['userid']+JSON.parse(bbb)['userpw'] ) },
+        });
+    });
+    $(document).on("click", "#rest_button_json_json", function() {
+        $.ajax({url: "./form_rest_json_json",
+                method: "POST",
+                data: JSON.stringify( { "userid": $("#userid_id").val(), "userpw": $("#userpw_id").val() } ),
+                contentType : "application/json; charset=UTF-8",
+                dataType: "json",
+                error: function(aaa){ alert(aaa) },
+                success: function(bbb){ alert( bbb['userid'] + bbb['userpw'] ) },
+                //success: function(bbb){ alert( JSON.parse( JSON.stringify(bbb) )['userid'] ) },
+        });
+    });
+    $(document).on("click", "#rest_button_uri", function() {
+        $.ajax({url: "./form_rest_uri/hong/555",
+                method: "POST",
+                dataType: "text",
+                error: function(aaa){ alert(aaa) },
+                success: function(bbb){ alert(bbb) },
+        });
+    });
+});
+
+/* -------------------------------------------
+$.ajax({url         : "./form_rest" ,
+        method      : "GET",
+        data        : "hellodddd" ,  #{ a: [1,2] }
+        contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType    : "text",  // 서버에게 요구하는 타입
+        error       : function()   { .... },
+        success     : function()   { .... },
+});
+---------------------------------------------- */
+</script>
+
+
+</body>
+</html>
