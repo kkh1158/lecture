@@ -44,6 +44,16 @@ rest - get/post<br>
 // class:.
 // dict   {"key": 1111}
 // JSON   {"key": 1111}
+/* -------------------------------------------
+        $.ajax({url         : "./form_rest" ,
+                method      : "GET",
+                data        : "hellodddd" ,  #{ a: [1,2] }
+                contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+                dataType    : "text",  // 서버에게 요구하는 타입
+                error       : function()   { .... },
+                success     : function()   { .... },
+        });
+---------------------------------------------- */
 
 $(document).ready(function(){
     $(document).on("click", "#rest_button_text_text", function() {
@@ -52,8 +62,8 @@ $(document).ready(function(){
                 data: { "userid": $("#userid_id").val(), "userpw": $("#userpw_id").val() },
                 contentType : "application/x-www-form-urlencoded; charset=UTF-8",
                 dataType: "text",
-                error: function(aaa){ alert(aaa) },
-                success: function(bbb){ alert(bbb) },
+                error: function(err){ alert(err) },
+                success: function(res){ alert(res) },
         });
     });
     $(document).on("click", "#rest_button_json_text", function() {
@@ -62,8 +72,8 @@ $(document).ready(function(){
                 data: JSON.stringify( { "userid": $("#userid_id").val(), "userpw": $("#userpw_id").val() } ),
                 contentType : "application/json; charset=UTF-8",
                 dataType: "text",
-                error: function(aaa){ alert(aaa) },
-                success: function(bbb){ alert( JSON.parse(bbb)['userid']+JSON.parse(bbb)['userpw'] ) },
+                error: function(err){ alert(err) },
+                success: function(res){ alert( JSON.parse(res)['userid']+JSON.parse(res)['userpw'] ) },
         });
     });
     $(document).on("click", "#rest_button_json_json", function() {
@@ -72,9 +82,9 @@ $(document).ready(function(){
                 data: JSON.stringify( { "userid": $("#userid_id").val(), "userpw": $("#userpw_id").val() } ),
                 contentType : "application/json; charset=UTF-8",
                 dataType: "json",
-                error: function(aaa){ alert(aaa) },
-                success: function(bbb){ alert( bbb['userid'] + bbb['userpw'] ) },
-                //success: function(bbb){ alert( JSON.parse( JSON.stringify(bbb) )['userid'] ) },
+                error: function(err){ alert(err) },
+                success: function(res){ alert( res['userid'] + res['userpw'] ) },
+                //success: function(res){ alert( JSON.parse( JSON.stringify(res) )['userid'] ) },
         });
     });
     $(document).on("click", "#rest_button_uri", function() {
@@ -86,17 +96,6 @@ $(document).ready(function(){
         });
     });
 });
-
-/* -------------------------------------------
-$.ajax({url         : "./form_rest" ,
-        method      : "GET",
-        data        : "hellodddd" ,  #{ a: [1,2] }
-        contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
-        dataType    : "text",  // 서버에게 요구하는 타입
-        error       : function()   { .... },
-        success     : function()   { .... },
-});
----------------------------------------------- */
 </script>
 
 

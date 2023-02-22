@@ -39,25 +39,27 @@ def form_post():
 # 4. 분산서버 서비스
 @app.route('/form_rest_text_text', methods=['POST'])
 def form_rest_text_text():
-    print('form_rest_text_text')
+    print('receive: text')
     id = request.form.get('userid')
     pw = request.form.get('userpw')
-    res = id+pw
-    print(res)
-    return res
+    print(id+pw)
+    print('return: text')
+    return id+pw
 
 @app.route('/form_rest_json_text', methods=['POST'])
 def form_rest_json_text():
-    print('form_rest_json_text')
+    print('receive: json')
     dict = request.get_json()
     print(dict)
+    print('return: text')
     return dict
 
 @app.route('/form_rest_json_json', methods=['POST'])
 def form_rest_json_json():
-    print('form_rest_json_json')
+    print('receive: json')
     dict = request.get_json()
     print(dict)
+    print('return: json')
     return jsonify(dict)
 ## return json.dump({"msg":"form_rest_json_json"})
 
