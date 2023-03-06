@@ -16,6 +16,9 @@ __pycache__
 # Dump file
 *.stackdump
 
+# directory
+semipjt/
+
 # Folder config file
 [Dd]esktop.ini
 
@@ -33,3 +36,5 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/windows
+
+

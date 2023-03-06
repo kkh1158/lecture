@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ======== Page title ============ -->
+    <title>Listico - Listing & Directory HTML Template</title>
+    
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="static/assets/img/favicon.png">
+
+    <!-- ===========  All Stylesheet ================= -->
+    <!--  fontawesome css plugins -->
+    <link rel="stylesheet" href="static/assets/css/fontawesome.min.css">
+    <!--  slick css plugins -->
+    <link rel="stylesheet" href="static/assets/css/slick.css">
+    <!--  rangeSlider css plugins -->
+    <link rel="stylesheet" href="static/assets/css/ion.rangeSlider.min.css">
+    <!--  slick theme css plugins -->
+    <link rel="stylesheet" href="static/assets/css/slick-theme.css">
+    <!--  magnific-popup css plugins -->
+    <link rel="stylesheet" href="static/assets/css/magnific-popup.css">
+    <!--  owl carosuel css plugins -->
+    <link rel="stylesheet" href="static/assets/css/owl.carousel.min.css">
+    <!--  owl theme css plugins -->
+    <link rel="stylesheet" href="static/assets/css/owl.theme.css">
+    <!--  meanmenu css plugins -->
+    <link rel="stylesheet" href="static/assets/css/meanmenu.min.css">
+    <!--  Bootstrap css plugins -->
+    <link rel="stylesheet" href="static/assets/css/bootstrap.min.css">
+    <!-- template main style css file -->
+    <link rel="stylesheet" href="static/style.css">
+    <!-- template responsive css stylesheet -->
+    <link rel="stylesheet" href="static/assets/css/responsive.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="theme_body">
+    
+    <!-- preloader element started -->
+        <div class="loader-wrap">
+            <div class="pin"></div>
+            <div class="pulse"></div>
+        </div>
+    <!-- preloader element end -->
+    
+    
+    <!-- header section start -->
+    <header class="header-section">
+        <!-- top bar -->
+        <div class="top-bar-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-md-8 col-12">
+                        <div class="top-bar-left">
+                            <span>Braking offer: 50% Offer  of our aparment for 1 month</span>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-4 col-12 text-md-right">
+                        <div class="top-bar-right">
+                            <div class="user-setting">
+                                 <ul>
+                                     {% if session['USER_ID_SESSION'] %}
+                                            <li><a href="/logout"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                                     {% else %}
+                                            <li><a href="/login_form"><i class="fas fa-sign-out-alt"></i>Login</a></li>
+                                            <li><a href="/register_form"><i class="fas fa-user"></i>Register</a></li>
+                                     {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- main menu -->
+        <div class="main-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 logo">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="static/assets/img/logo.png" class="logo-display" alt="shipo">
+                        </a> 
+                    </div> <!-- /.col-md-3 logo -->
+                    <div class="col-md-9 d-none d-lg-block text-lg-right">
+                        <nav id="responsive-menu" class="main-menu">
+                            <ul class="menu-items">
+                                <li><a href="#">home</a>
+                                    <ul class="submenu">
+                                        <li><a href="index.html">Home One</a></li>
+                                        <li><a href="index-2.html">Home Two</a></li>
+                                    </ul>    
+                                </li>
+                                 <li><a href="about.html">about</a></li>
+                                 <li><a href="listing-single-details.html">Listing</a>
+                                    <ul class="submenu">
+                                        <li><a href="tags.html">tags</a></li>
+                                        <li><a href="tags-grid.html">tags grid</a></li>
+                                        <li><a href="explors-map-sidebar.html">Explors</a></li>
+                                    </ul>    
+                                 </li>
+                                 <li><a href="explors-map-sidebar.html">Property</a></li>
+                                 <li><a href="explors-map-sidebar.html">Find</a></li>
+                                 <li><a href="contact.html">Contact</a></li>
+                                <li><a href="#">Pages</a>
+                                    <ul class="submenu">
+                                        <li><a href="login.html">login</a></li>
+                                        <li><a href="register.html">register</a></li>
+                                        <li><a href="booking.html">booking</a></li>
+                                        <li><a href="popular-locations.html">Popular Place</a></li>
+                                        <li><a href="contact.html">contact</a></li>
+                                    </ul> 
+                                </li>
+                            </ul>
+{% if session['USER_ID_SESSION'] %}
+        <a href="/booking" class="btn-booking-start">Booking Now</a>
+ {% endif %}
+
+
+
+                        </nav>
+                    </div> <!-- /. col-md-9 d-none d-lg-block -->
+
+                    <div class="col-12">
+                        <div class="responsive-menu"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header section end -->
+
+
+<!-- ====================================================================================== -->
+    <section class="hero-section welcome-section">
+        <div class="container-fluid m-lg-0 p-lg-0">
+            <div class="row">
+<!-- 검색창 ====================================================================================== -->
+                <div class="search-section d-flex col-lg-2 col-sm-12 p-0 bg-cover" style="background-image: url('static/assets/img/search-bg.jpg')">
+                    <div class="search-tab-wrap">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs">
+                           <li class="nav-item">
+                              <a class="nav-link active" data-toggle="tab" href="#place">place</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" data-toggle="tab" href="#event">event</a>
+                           </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                           <div class="tab-pane active container" id="place">
+                               <div class="search-form-box">
+                                   <form action="/" method="post" class="search-form">
+                                       <input type="text" placeholder="검색어" name="search_str">
+                                       <select name="cate">
+                                           <option value="전체">전체</option>
+                                           <option value="음식점">음식점</option>
+                                           <option value="관광지">관광지</option>
+                                           <option value="숙박">숙박</option>
+                                           <option value="쇼핑">쇼핑</option>
+                                       </select>
+                                       <button type="submit">장소 검색</button>
+                                   </form>
+                               </div>
+                           </div>
+                           <div class="tab-pane container" id="event">
+                                <div class="search-form-box">
+                                   <h3>Discover Great Event.</h3>
+                                   <p>Tag: Nightlife, Hotel, Restaurant, Sport, Shop.</p>
+                                   <form action="#" class="search-form">
+                                       <input type="text" placeholder="Where to go?" name="place">
+                                       <input type="text" placeholder="Location" name="location">
+                                       <select>
+                                           <option value="Categroy">Categroy</option>
+                                           <option value="1">Hotel</option>
+                                           <option value="2">Restaurant</option>
+                                           <option value="3">Property</option>
+                                           <option value="4">Shopping</option>
+                                       </select>
+                                       <button type="submit">Search request</button>
+                                   </form>
+                               </div>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+<!-- 카드맵 ====================================================================================== -->
+                <div class="col-lg-5 col-sm-12">
+
+                    <div class="row" id="my-top-n-div">
+                        {% for dic in KEY_DF_JSON_STR %}
+                        <div class="col-xl-6 col-md-6 col-lg-6 col-sm-12">
+                            <div class="single-popular-item">
+                                <div class="item-cover-image bg-cover" style="background-image: url('{{dic['thumb'] | safe}}')">
+                                    <div class="tags">
+                                        <ul>
+                                            <li><a href="#">{{dic['tag']}}</a></li>
+                                        </ul>
+                                        <a href='#' class='btn-wishlist' value="{{dic['contentsid']}}"><i class="far fa-heart"></i></a>
+                                    </div>
+                                    <div class="item-details">
+                                        <div class="item-category">
+                                            <div class="cat-icon">
+                                                <img src="static/assets/img/exterior.png" alt="listico">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <h4><a href=javascript:window.open("/detail_view?contentsid={{dic['contentsid']}}",'',"status=no,menubar=no,toolbar=no,scrollbars=yes,resizable=yes,width=400,height=600")>
+                                        {{dic['title']}}</a></h4>
+                                    <div class="item-feedback">
+                                        <ul>
+                                            {% for i in range( (dic['evelpt'] | int )) %}
+                                                <li><i class="fas fa-star"></i></li>
+                                            {% endfor %}
+                                        </ul>
+                                        ({{dic['reviewcnt']}} Reviwer)
+                                    </div>
+                                    <div class="item-store-location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                         {{dic['address']}}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+
+                </div>
+<!-- ===================================================================================== -->
+                <div class="slider-section     col-lg-5 col-sm-12 p-0">
+<!-- 지도  -------------------------------------------------------------------------------  -->
+                    <div class="slides listico-slider">
+                        <div class="single-slide" id="div_travel">
+                            {{ KEY_MAP_HTML|safe if KEY_MAP_HTML is not none }}
+                        </div>
+                       <div class="single-slide">
+                            {{ KEY_MAP_HTML|safe if KEY_MAP_HTML is not none }}
+                        </div>
+                        <div class="single-slide">
+                            {{ KEY_MAP_HTML|safe if KEY_MAP_HTML is not none }}
+                        </div>
+                        <div class="single-slide">
+                            {{ KEY_MAP_HTML|safe if KEY_MAP_HTML is not none }}
+                        </div>
+                        <div class="single-slide">
+                            {{ KEY_MAP_HTML|safe if KEY_MAP_HTML is not none }}
+                        </div>
+                    </div>
+<!-- 지도 네비 ---------------------------------------------------------------------------- -->
+                    <div class="slides slider-nav text-center">
+                        <div class="single-nav {%if KEY_CATE=='쇼핑'%} slick-current {%endif%}" {%if KEY_CATE=='쇼핑'%} tabindex="0" {%endif%} value="쇼핑">
+                            <div class="slide-icon">
+                                <span>쇼핑</span>
+                                <img src="static/assets/img/shop.png" alt="listico">
+                                2 Listing
+                            </div>
+                        </div>
+                        <div class="single-nav {%if KEY_CATE=='음식점'%} slick-current {%endif%}" {%if KEY_CATE=='음식점'%} tabindex="0" {%endif%} value="음식점">
+                            <div class="slide-icon" >
+                                <span>음식점</span>
+                                <img src="static/assets/img/red-exterior.png" alt="listico">
+                                8 Listing
+                            </div>
+                        </div>
+
+
+                        <div class="single-nav {%if KEY_CATE=='숙박'%} slick-current {%endif%}" {%if KEY_CATE=='숙박'%} tabindex="0" {%endif%} value="숙박">
+                            <div class="slide-icon" >
+                                <span>숙박</span>
+                                <img src="static/assets/img/red-kat.png" alt="listico">
+                                2 Listing
+                            </div>
+                        </div>
+                        <div class="single-nav {%if KEY_CATE=='관광지'%} slick-current {%endif%}" {%if KEY_CATE=='관광지'%} tabindex="0" {%endif%} value="관광지">
+                            <div class="slide-icon" >
+                                <span>관광지</span>
+                                <img src="static/assets/img/red-din.png" alt="listico">
+                                8 Listing
+                            </div>
+                        </div>
+                        <div class="single-nav  {%if KEY_CATE=='숙박'%} slick-current {%endif%}" {%if KEY_CATE=='숙박'%} tabindex="0" {%endif%} value="숙박">
+                            <div class="slide-icon" >
+                                <span>숙박</span>
+                                <img src="static/assets/img/red-medical.png" alt="listico">
+                                5 Listing
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+       </div>
+    </section>
+
+<!-- ====================================================================================== -->
+    <!-- footer section wrapper start -->
+    <footer class="footer-section">
+        <div class="footer-widgets-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 col-lg-3 col-sm-12">
+                        <div class="single-footer-widget">
+                            <div class="widget-title">
+                                <h4>About US</h4>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, sectetur adipisicing elit, sed do eiusmod mpor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, uis nostrud exercitation</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 col-lg-3 col-sm-12">
+                        <div class="single-footer-widget">
+                            <div class="widget-title">
+                                <h4>Address</h4>
+                            </div>
+                            <p><strong>REALITY PROPERTY</strong>
+                                142 West newton, NY 19088 <br>
+                                <strong>United States</strong>
+                                +101 (235) 222 3353
+                                info@psdexpert.com</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 col-lg-3 col-sm-12">
+                        <div class="single-footer-widget">
+                            <div class="widget-title">
+                                <h4>Categories</h4>
+                            </div>
+                            <div class="widget-cats row">
+                                <ul class="col-12 col-lg-6">
+                                    <li><a href="#">Reviews</a></li>
+                                    <li><a href="#">Bookmark</a></li>
+                                    <li><a href="#">Bookings</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#">Shopping</a></li>
+                                    <li><a href="#">My Profile</a></li>
+                                </ul>
+                                <ul class="col-12 col-lg-6">
+                                    <li><a href="#">Restaurant</a></li>
+                                    <li><a href="#">Cafe & Bar</a></li>
+                                    <li><a href="#">Hotel</a></li>
+                                    <li><a href="#">My Listings</a></li>
+                                    <li><a href="#">add Listings</a></li>
+                                    <li><a href="#">Spa & Beauty</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 col-lg-3 col-sm-12">
+                        <div class="single-footer-widget">
+                            <div class="widget-title">
+                                <h4>Subscribe</h4>
+                            </div>
+                            <div class="subscribe-box">
+                                <form action="#">
+                                    <input type="text" placeholder="Email address">
+                                    <button type="submit">send</button>
+                                </form>
+                            </div>
+                            <div class="social-icons">
+                                <span>Follow us</span>
+                                <ul>
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-sm-12">
+                        <span>&copy;2019 rights reserved - Designed and Developed by ModinaTheme</span>
+                    </div>
+                    <div class="col-xl-6 col-sm-12">
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Listings</a></li>
+                                <li><a href="#">Help</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer section wrapper end -->
+
+
+
+    <!--  ALl JS Plugins
+    ====================================== -->
+    <script src="static/assets/js/jquery-1.12.4.min.js"></script>
+    <script src="static/assets/js/jquery.easing.1.3.js"></script>
+    <script src="static/assets/js/popper.min.js"></script>
+    <script src="static/assets/js/bootstrap.min.js"></script>
+    <script src="static/assets/js/scrollUp.min.js"></script>
+    <script src="static/assets/js/magnific-popup.min.js"></script>
+    <script src="static/assets/js/wow.min.js"></script>
+    <script src="static/assets/js/owl.carousel.min.js"></script>
+    <script src="static/assets/js/slick.min.js"></script>
+    <script src="static/assets/js/ion.rangeSlider.min.js"></script>
+    <script src="static/assets/js/rater.min.js"></script>
+    <script src="static/assets/js/meanmenu.min.js"></script>
+    <script src="static/assets/js/main.js"></script>
+
+<script>
+
+
+
+
+$(document).ready(function(){
+
+
+    $(document).on("click",".btn-wishlist",function() {
+        alert($(this).attr("value"))
+        $.ajax({
+			  url: "/booking_add" ,
+			  data: {"contentsid":$(this).attr("value")} ,
+			  contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+			  dataType    : "text" ,
+              success: function( resString ) {           //콜백함수처리 방식 : JSON 객체로 들어온다
+                    console.log(resString)               //200
+              },
+              error: function( result ) {
+                    alert("error");                     //403, 500
+              },
+        });
+    });
+
+
+    $(document).on("click",".single-nav",function() {
+
+        //------ /rest 비동기통신 --------------------------------
+		$.ajax({
+			  url: "./search_map_html" ,
+			 //----------------------------------------------------------------------
+			  data: {"cate":$(this).attr("value")} ,
+			  contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+			 //----------------------------------------------------------------------
+			 //data        : JSON.stringify({"cate":$(this).val()}) ,
+             //contentType : "application/json; charset=UTF-8",
+             //=======================================================================
+			 //dataType    : "text" ,
+             //success: function( resString ) {           //콜백함수처리 방식 : 문자열로 들어온다
+             //     console.log(resString)
+             ///    resObject = JSON.parse(resString);   //{k1:val, k2:val2}
+             //----------------------------------------------------------------------
+              dataType    : "json" ,
+              success: function( resObject ) {           //콜백함수처리 방식 : JSON 객체로 들어온다
+                    console.log(resObject)               //{k1:val, k2:val2}
+             //----------------------------------------------------------------------
+             // { KEY_MAP_HTML    : '<iframe srcdoc="&lt;!DOCTYPE html&gt;\n&lt;html...</iframe>',
+             //   KEY_DF_JSON_STR : '[{"title":"\\ub098\\ubbf8\\", ..., "img":"3-9914-e485793e3b5a.jpg"}]'
+             //  }
+
+                    var key_map_html = resObject["KEY_MAP_HTML"];
+                    var key_df_json  = JSON.parse(resObject["KEY_DF_JSON_STR"]);
+                    console.log(key_map_html)
+                    console.log(key_df_json)             //{k1:val, k2:val2}
+                    htmlstr = "";
+
+					$.map( key_df_json, function( val, idx ) {
+					    console.log( val['thumb'] )
+
+					    htmlstr += "<div class='col-xl-6 col-md-6 col-lg-6 col-sm-12'>"
+                        htmlstr += "<div class='single-popular-item'>"
+                        htmlstr += "<div class='item-cover-image bg-cover' style=\"background-image: url('"+val["thumb"]+"')\">"
+                        htmlstr += "<div class='tags'>"
+                        htmlstr += "<ul><li><a href='#'>" + val['tag'] + "</a></li></ul>"
+                        htmlstr += "<a href='#' class='btn-wishlist' value='" + val['contentsid'] + "'><i class='far fa-heart'></i></a>"
+                        htmlstr += "</div>"
+                        htmlstr += "<div class='item-details'><div class='item-category'><div class='cat-icon'>"
+                        htmlstr += "<img src='static/assets/img/exterior.png' alt='listico'>"
+                        htmlstr += "</div></div></div>"
+                        htmlstr += "</div>"
+                        htmlstr += "<div class='item-content'>"
+                        htmlstr += "<h4><a href='/detail_view?contentsid="+val['contentsid']+"'>" + val['title'] + "</a></h4>"
+                        htmlstr += "<div class='item-feedback'>"
+                        htmlstr += "<ul>"
+
+                        var evelpt = parseInt(val['evelpt']);
+                        for (var i = 0; i < evelpt; i++) {
+                            htmlstr += "<li><i class='fas fa-star'></i></li>"
+                        }
+
+                        htmlstr += "</ul>"
+                        htmlstr += "("+val["reviewcnt"]+" Reviwer)"
+                        htmlstr += "</div>"
+                        htmlstr += "<div class='item-store-location'>"
+                        htmlstr += "<i class='fas fa-map-marker-alt'></i>"
+                        htmlstr += val["address"]
+                        htmlstr += "</div></div></div></div>"
+					});
+
+                    $("#my-top-n-div").empty();
+                    $("#my-top-n-div").html(htmlstr);
+
+					$(".single-slide").empty();
+                    $(".single-slide").html(key_map_html);
+
+			  },
+			  error: function( result ) {
+					alert("error");
+			  },
+		});
+   });
+
+
+ });
+</script>
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Modal 제목</h4>
+            </div>
+            <div class="modal-body">
+                Modal 내용
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+<!-- Mirrored from listico-html.netlify.app/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 01:43:27 GMT -->
+</html>

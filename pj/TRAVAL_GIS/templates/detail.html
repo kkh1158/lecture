@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ======== Page title ============ -->
+    <title>Listico - Listing & Directory HTML Template</title>
+
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="static/assets/img/favicon.png">
+
+    <!-- ===========  All Stylesheet ================= -->
+    <!--  fontawesome css plugins -->
+    <link rel="stylesheet" href="static/assets/css/fontawesome.min.css">
+    <!--  slick css plugins -->
+    <link rel="stylesheet" href="static/assets/css/slick.css">
+    <!--  rangeSlider css plugins -->
+    <link rel="stylesheet" href="static/assets/css/ion.rangeSlider.min.css">
+    <!--  slick theme css plugins -->
+    <link rel="stylesheet" href="static/assets/css/slick-theme.css">
+    <!--  magnific-popup css plugins -->
+    <link rel="stylesheet" href="static/assets/css/magnific-popup.css">
+    <!--  owl carosuel css plugins -->
+    <link rel="stylesheet" href="static/assets/css/owl.carousel.min.css">
+    <!--  owl theme css plugins -->
+    <link rel="stylesheet" href="static/assets/css/owl.theme.css">
+    <!--  meanmenu css plugins -->
+    <link rel="stylesheet" href="static/assets/css/meanmenu.min.css">
+    <!--  Bootstrap css plugins -->
+    <link rel="stylesheet" href="static/assets/css/bootstrap.min.css">
+    <!-- template main style css file -->
+    <link rel="stylesheet" href="static/style.css">
+    <!-- template responsive css stylesheet -->
+    <link rel="stylesheet" href="static/assets/css/responsive.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="theme_body">
+
+    <!-- preloader element started -->
+        <div class="loader-wrap">
+            <div class="pin"></div>
+            <div class="pulse"></div>
+        </div>
+    <!-- preloader element end -->
+
+<!-- 상단 메뉴바 ----------------------------------------------------- -->
+    <div class="single-details-navbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-4 col-6 ">
+                    <nav class="details-nav navbar navbar-expand-lg">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#detailsnav">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                       <div class="collapse navbar-collapse justify-content-start" id="detailsnav">
+                          <ul class="navbar-nav">
+                            <a href="#des-box">Description</a>
+                            <a href="#photo-box">Photos</a>
+                            <a href="#map-box">Maps</a>
+                            <a href="#video-box">Video</a>
+                            <a href="#menu-price">Menu Prices</a>
+                            <a href="#review-box">Reviews</a>
+                          </ul>
+                       </div>
+                    </nav>
+                </div>
+                <div class="col-lg-5 col-md-8 col-6">
+                    <div class="social-link-share">
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- single deatils content wrapper start -->
+    <section class="single-details-box-section section-padding page-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                    <div class="single-content-box-area">
+                        <div class="description_box box" id="des-box">
+                            <h3>{{KEY_DF['title']}}</h3><a href='#' class='btn-wishlist' value="{{KEY_DF['contentsid']}}"><i class="far fa-heart"></i></a>
+                            <p>{{KEY_DF['sbst']}}</p>
+                        </div>
+
+<!----------------- 포토 슬라이싱 ------------------>
+                        <div class="photos_box box" id="photo-box">
+                            <h3>관련사진</h3>
+                            <div class="photo-gallery">
+                                <div class="single-g-slide">
+                                    <img src="{{KEY_DF['img']}}" alt="">
+                                </div>
+                                <div class="single-g-slide">
+                                    <img src="static/assets/img/gallery/gallery3.jpg" alt="">
+                                </div>
+                                <div class="single-g-slide">
+                                    <img src="{{KEY_DF['thumb']}}" alt="">
+                                </div>
+                                <div class="single-g-slide">
+                                    <img src="static/assets/img/gallery/gallery4.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="gallery_nav">
+                                <div class="single-gallery-img">
+                                    <img src="{{KEY_DF['img']}}" alt="">
+                                </div>
+                                <div class="single-gallery-img">
+                                    <img src="static/assets/img/gallery/gn3.jpg" alt="">
+                                </div>
+                                <div class="single-gallery-img">
+                                    <img src="{{KEY_DF['thumb']}}" alt="">
+                                </div>
+                                <div class="single-gallery-img">
+                                    <img src="static/assets/img/gallery/gn4.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+<!-- 지도 ---------------------------------------------->
+                        <div class="map_box box" id="map-box">
+                            <h3>지도위치</h3>
+                            <div class="map-wrap">
+                                {{KEY_MAP_HTML | safe}}<br>
+                                {{KEY_DF['address']}}<br>
+                                {{KEY_DF['phoneno']}}
+                            </div>
+                        </div>
+<!-- 동영상 ---------------------------------------------->
+                        <div class="video_box box" id="video-box">
+                            <h3>관련영상</h3>
+                            <div class="video-wrap">
+
+                                {% for dict in KEY_YT_LIST %}
+                                    {{dict['title']}}<br>
+                                    <a href="movies/suicide-squad/index.html">
+                                        <img src="{{dict['movie']}}" width="480" height="400"/><br>
+                                    </a>
+                                {% endfor %}
+
+                            </div>
+                        </div>
+<!-- 관련글 ---------------------------------------------->
+                        <div class="menu_price box" id="menu-price">
+                            <h3>관련댓글</h3>
+                            <div class="menu-item-price">
+                                    <div class="item-feedback">
+                                        <hr>
+                                            {% for dic in KEY_REVIEW_LIST %}
+                                                {{dic["created"]}} &nbsp;&nbsp;
+                                                {{dic["usernm"]}} &nbsp;&nbsp;
+                                                {% for i in range( (dic['evelpt'] | int )) %}
+                                                    <li><i class="fas fa-star"></i></li>
+                                                {% endfor %}
+                                                <br><font color="#6666CC"><b>{{dic["tag"]}}</b></font>
+                                                <br>{{dic['evelcontent']}} <span></span></li>
+                                                <hr>
+                                            {% endfor %}
+                                        <b><a href="#">[더보기]</a></b>
+                                    </div>
+                            </div>
+                        </div>
+<!-- 별점평점 ---------------------------------------------->
+                        <div class="review_comment_box" id="review-box">
+                            <form action="#" class="row">
+                                <div class="col-lg-6 col-12">
+                                    <div class="review_box">
+                                        <h3>리뷰 평점</h3>
+                                        <ul>
+                                            <li>
+                                                <div class="rating"></div>
+                                            </li>
+                                        </ul>
+                                        <input type="checkbox"> I agree to your policy
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-12">
+                                    <div class="comment_box">
+                                        <h3>등록자 정보</h3>
+                                        <input type="text" placeholder="name*">
+                                        <input type="text" placeholder="email*">
+                                        <textarea name="message" placeholder="message"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn-submit" type="submit">Submit Reviews</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!--  ALl JS Plugins
+    ====================================== -->
+    <script src="static/assets/js/jquery-1.12.4.min.js"></script>
+    <script src="static/assets/js/jquery.easing.1.3.js"></script>
+    <script src="static/assets/js/popper.min.js"></script>
+    <script src="static/assets/js/bootstrap.min.js"></script>
+    <script src="static/assets/js/scrollUp.min.js"></script>
+    <script src="static/assets/js/magnific-popup.min.js"></script>
+    <script src="static/assets/js/wow.min.js"></script>
+    <script src="static/assets/js/owl.carousel.min.js"></script>
+    <script src="static/assets/js/slick.min.js"></script>
+    <script src="static/assets/js/ion.rangeSlider.min.js"></script>
+    <script src="static/assets/js/rater.min.js"></script>
+    <script src="static/assets/js/meanmenu.min.js"></script>
+    <script src="static/assets/js/main.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+    $(document).on("click",".btn-wishlist",function() {
+        alert($(this).attr("value"))
+        $.ajax({
+			  url: "/booking_add" ,
+			  data: {"contentsid":$(this).attr("value")} ,
+			  contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+			  dataType    : "text" ,
+              success: function( resString ) {           //콜백함수처리 방식 : JSON 객체로 들어온다
+                    console.log(resString)               //200
+              },
+              error: function( result ) {
+                    alert("error");                     //403, 500
+              },
+        });
+    });
+
+
+ });
+</script>
+
+
+</body>
+
+<!-- Mirrored from listico-html.netlify.app/listing-single-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 01:43:57 GMT -->
+</html>
